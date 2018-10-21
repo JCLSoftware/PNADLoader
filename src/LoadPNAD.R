@@ -5,8 +5,6 @@ tx2  <- gsub(pattern = "  ", replace = " ", x = tx2)
 tx2  <- gsub(pattern = "  ", replace = " ", x = tx2)
 tx2  <- gsub(pattern = "  ", replace = " ", x = tx2)
 tx2  <- gsub(pattern = ". ", replace = " ", x = tx2, fixed=T)
-#tx2 <- substr(tx2, 1, 100)
-#tx2  <- gsub(pattern = "/(.)*/", replace = " ", x = tx2)
 tx2
 target<-paste(source, '.txt', sep='')
 writeLines(tx2, con=target)
