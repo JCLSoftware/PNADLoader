@@ -1,6 +1,7 @@
 #LEITURA DA PNAD 2018: rm(list=ls(all=TRUE))
 setwd("~/Projetcs/R/PNADRegression/")
 # mostrar até 8 casas decimais options("scipen" = 8) 
+#Arquivo de metadados (propriedades dos campos de dados)
 source<-'https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/data/meta.csv'
 tx  <- readLines(source)
 tx2  <- gsub(pattern = " $", replace = " ", x = tx, fixed=T)
@@ -13,7 +14,7 @@ tx2
 target<-'meta.txt'
 writeLines(tx2, con=target)
 config<-read.csv(file=target, sep = ' ', header = F)
-
+#Arquivo de dados
 sourceData<-'data/PNADC_012017_20180816.zip'
 if(!file.exists(sourceData)){
   pes2018 <- read.fwf(file='data/PNADC_012017_20180816/PNADC_012017_20180816.txt', widths=config$V3)
