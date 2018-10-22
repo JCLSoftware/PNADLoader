@@ -5,7 +5,6 @@ Uma vez atribuídos os parâmetros, basta carregar o arquivo LoadPNAD.R em seu c
 ```R
 setwd('~/R/PNAD')
 sourceData<-'PNADC_012017_20180816.zip'
-file.exists(sourceData)
 sourceMeta<-'https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/data/meta.csv'
 #VD4020: Renda - rendimento mensal efetivo de todos os trabalhos para os maiores de 14 anos
 #V1023: Área censitária é se o domicílio fica na capital, região metropolitana ou em outros lugares do estado
@@ -17,6 +16,8 @@ sourceMeta<-'https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master
 selectedFields<-c("UF","V2007","V2009","V2010","VD3002","VD4020","V1023","V1022","V1028")
 source('https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/src/LoadPNAD.R')
 ```
+
+Observe que o arquivo contendo os dados de entrada devem ser especificados nos parâmetros `sourceData` e `sourceMeta`. Se desejar ler os dados a partir de um conjunto de dados obtido do repositório do IBGE, é preciso informar também quais campos deseja selecionar. Para isso, atribua à variável `selectedFields` uma lista com os nomes dos campos conforme documentação de layout do IBGE.
 
 # License
 
