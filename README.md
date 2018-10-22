@@ -1,6 +1,6 @@
 # PNAD Loader
 
-Uma vez atribuidos os parâmetros, basta carregar o arquivo LoadPNAD.R em seu código para que tenha acesso aos dados na variável ´´´R selectedCols ´´´. Veja o exemplo abaixo.
+Uma vez atribuídos os parâmetros, basta carregar o arquivo LoadPNAD.R em seu código para que tenha acesso aos dados na variável ´´´R selectedCols ´´´. Veja o exemplo que segue.
 
 ```R
 setwd('~/R/PNAD')
@@ -18,7 +18,8 @@ selectedFields<-c("UF","V2007","V2009","V2010","VD3002","VD4020","V1023","V1022"
 source('https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/src/LoadPNAD.R')
 ```
 
-License
+# License
+
 This software is licensed under the following terms (GPLv3):
 
 Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. 
@@ -30,4 +31,3 @@ V Seminário de Iniciação Científica e V Mostra de Trabalhos Científicos do 
 # External Links
 
 PNAD datasets: ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/
-
