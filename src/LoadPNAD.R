@@ -2,8 +2,8 @@
 #make sure to set correctly your working directory Ex: setwd("~/Projetcs/R/PNADRegression/")
 # mostrar até 8 casas decimais options("scipen" = 8) 
 #Arquivo de metadados (propriedades dos campos de dados)
-source<-'https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/data/meta.csv'
-tx  <- readLines(source)
+#sourceMeta<-'https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/data/meta.csv'
+tx  <- readLines(sourceMeta)
 tx2  <- gsub(pattern = " $", replace = " ", x = tx, fixed=T)
 tx2  <- gsub(pattern = "  ", replace = " ", x = tx2)
 tx2  <- gsub(pattern = "  ", replace = " ", x = tx2)
@@ -16,7 +16,7 @@ writeLines(tx2, con=target)
 config<-read.csv(file=target, sep = ' ', header = F)
 #Arquivo de dados
 #sourceData<-'data/PNADC_012017_20180816.zip'
-csvFile = gsub(pattern = '.txt$', replace = '.csv$', x = sourceData)
+csvFile = gsub(pattern = '.zip$', replace = '.csv$', x = sourceData)
 if(!file.exists(sourceData)){
   pes2018 <- read.fwf(file='data/PNADC_012017_20180816/PNADC_012017_20180816.txt', widths=config$V3)
   names(pes2018) <-config$V2
