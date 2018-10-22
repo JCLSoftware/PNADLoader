@@ -11,5 +11,5 @@ V Seminário de Iniciação Científica e V Mostra de Trabalhos Científicos do 
 
 # External Links
 
-Coleção de dados do PNAD: ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/
+PNAD datasets: ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/
 
