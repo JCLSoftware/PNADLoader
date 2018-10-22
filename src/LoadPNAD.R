@@ -47,8 +47,10 @@ checkConfig<-function(){
   if(!file.exists(sourceData)){
     stop(paste("Arquivo de dados não encontrado: ", sourceData))
   }
-  if(!file.exists(sourceMeta) && !url.exists(sourceMeta)){
-    stop(paste("Arquivo de metadados não encontrado: ", sourceMeta))
+  if(!file.exists(sourceMeta)){
+    if(!url.exists(sourceMeta)){
+      stop(paste("Metadados não encontrado: ", sourceMeta))
+    }
   }
   return (T)
 }
