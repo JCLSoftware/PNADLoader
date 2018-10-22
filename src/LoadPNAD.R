@@ -1,4 +1,5 @@
 #LEITURA DA PNAD 2018: rm(list=ls(all=TRUE))
+#make sure to set correctly your working directory 
 setwd("~/Projetcs/R/PNADRegression/")
 # mostrar até 8 casas decimais options("scipen" = 8) 
 #Arquivo de metadados (propriedades dos campos de dados)
