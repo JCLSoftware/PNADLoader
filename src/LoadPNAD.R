@@ -1,4 +1,3 @@
-library(RCurl)
 #LEITURA DA PNAD 2018: 
 #make sure to set correctly your working directory Ex: setwd("~/Projetcs/R/PNADRegression/")
 # mostrar até 8 casas decimais options("scipen" = 8) 
@@ -49,7 +48,7 @@ checkConfig<-function(){
     stop(paste("Arquivo de dados não encontrado: ", sourceData))
   }
   if(!file.exists(sourceMeta)){
-    if(!isUrl(sourceMeta)){
+    if(!grepl("www.|http:|https:", sourceMeta)){
       stop(paste("Metadados não encontrado: ", sourceMeta))
     }
   }
