@@ -1,3 +1,4 @@
+library(RCurl)
 #LEITURA DA PNAD 2018: 
 #make sure to set correctly your working directory Ex: setwd("~/Projetcs/R/PNADRegression/")
 # mostrar até 8 casas decimais options("scipen" = 8) 
