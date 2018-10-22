@@ -47,7 +47,10 @@ checkConfig<-function(){
   if(!file.exists(sourceData)){
     stop(paste("Arquivo de dados não encontrado: ", sourceData))
   }
-  return (True)
+  if(!file.exists(sourceMeta)){
+    stop(paste("Arquivo de metadados não encontrado: ", sourceMeta))
+  }
+  return (T)
 }
 if(checkConfig()){
   csvFile = gsub(pattern = '.zip$', replace = '.csv', x = sourceData)
