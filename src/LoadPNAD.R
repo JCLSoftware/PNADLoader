@@ -32,7 +32,7 @@ getDataFile<-function(){
       summary(pes2018) 
       selectedCols <- subset(pes2018, select=selectedFields)
       write.csv(pes2018b, file=csvFile, row.names = F)
-      #Zip file PNADC_012017_20180816.csv -> PNADC_012017_20180816.zip  
+      #Zip file .csv -> .zip  
       if(!file.exists(sourceData)){
         zip(zipfile = sourceData, files = csvFile)
       }
