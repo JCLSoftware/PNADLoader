@@ -43,9 +43,16 @@ getDataFile<-function(){
     } 
     return (f)
 }
+checkConfig<-function(){
+  if(!file.exists(sourceData)){
+    stop(paste("Arquivo de dados não encontrado: ", sourceData))
+  }
+  return (True)
+}
+if(checkConfig()){
+  csvFile = gsub(pattern = '.zip$', replace = '.csv', x = sourceData)
 
-csvFile = gsub(pattern = '.zip$', replace = '.csv', x = sourceData)
-
-buildMeta(sourceMeta)
-config<-readMeta()
-selectedCols<-read.csv(file = getDataFile())
+  buildMeta(sourceMeta)
+  config<-readMeta()
+  selectedCols<-read.csv(file = getDataFile())
+}
