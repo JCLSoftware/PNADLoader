@@ -1,6 +1,6 @@
 # PNAD Loader
 
-Uma vez atribuídos os parâmetros, basta carregar o arquivo LoadPNAD.R em seu código para que tenha acesso aos dados na variável ´´´R selectedCols ´´´. Veja o exemplo que segue.
+Uma vez atribuídos os parâmetros, basta carregar o arquivo `LoadPNAD.R` em seu código para que tenha acesso aos dados na variável `selectedCols`. Veja o exemplo que segue.
 
 ```R
 setwd('~/R/PNAD')
@@ -25,7 +25,8 @@ This software is licensed under the following terms (GPLv3):
 
 Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. 
 
-Please cite:
+## Please cite:
+
 Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos
 V Seminário de Iniciação Científica e V Mostra de Trabalhos Científicos do IFNMG, Instituto Federal do Norte de Minas Gerais - IFNMG, Montes Claros/MG, , 2016. Bibtex: http://research.jcloud.net.br/bib/?q=Fatores
 
