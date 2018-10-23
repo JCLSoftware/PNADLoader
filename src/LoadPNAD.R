@@ -51,18 +51,22 @@ selectFields<-function(srczip, srcmetazip, selectedFields){
       #selectedCols<-read.csv(file = getDataFile())
       message("Selecionando dados...")
       selectedCols <- subset(result, select=selectedFields)      
-      #Zip file .csv -> .zip  
-      #if(!file.exists(sourceData)){
-      #  zip(zipfile = sourceData, files = csvFile)
-      #}  
-      return (result)
+      return (selectedCols)
 }
-buildSelectFieldsCSV<-function(srczip, srcmetazip, selectedFields){
-  csvFile<-gsub(pattern = '.zip$', replace = '.csv', x = srczip)
+newExt<-function(from, to, name){
+  gsub(pattern = from, replace = to, x = name)
+}
+buildSelectFieldsCSV<-function(srczip, srcmetazip, selectedFields, force=F){
+  csvFile<-newExt('.zip$', '.csv', srczip)
   write.csv(selectFields(srczip, srcmetazip, selectedFields), file=csvFile, row.names = F)
+  #Zip file .csv -> .zip  
+  csvFileZiped<-newExt('.csv$', '.zip', csvFile)
+  if(!file.exists(csvFileZiped || force)){
+    zip(zipfile = csvFileZiped, files = csvFile)
+  }
   return (csvFile)
 }
-getDataFile<-function(){
+getDataFile<-function(sourceData){
     if(file.exists(sourceData)){
       f<-unz(sourceData, csvFile)
     }else{
@@ -85,8 +89,13 @@ checkConfig<-function(){
   }
   return (T)
 }
+readCSVZip<-function(srcZip){
+  srcZFile<-basename(srcZip)
+  csvFile = newExt('.zip$', '.csv', srcZFile)
+  read.csv(file = unz(srcZFile, csvFile))
+}
 if(checkConfig()){
-  csvFile = gsub(pattern = '.zip$', replace = '.csv', x = sourceData)
+  csvFile = newExt('.zip$', '.csv', sourceData)
   config<-readMeta(sourceMeta)
-  selectedCols<-read.csv(file = getDataFile())
+  selectedCols<-read.csv(file = sourceData)
 }
