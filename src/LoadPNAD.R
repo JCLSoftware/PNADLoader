@@ -45,7 +45,6 @@ selectFields<-function(srczip, srcmetazip, selectedFields){
       names(result) <-config$V2
       #View(pes2018)
       summary(result) 
-      #selectedCols<-read.csv(file = getDataFile())
       message("Selecionando dados...")
       selectedCols <- subset(result, select=selectedFields)      
       return (selectedCols)
@@ -54,7 +53,7 @@ newExt<-function(from, to, name){
   gsub(pattern = from, replace = to, x = name)
 }
 buildSelectFieldsCSV<-function(srczip, srcmetazip, selectedFields, force=F){
-  csvFile<-newExt('.zip$', '.csv', srczip)
+  csvFile<-newExt('.zip$', '.csv', basename(srczip))
   write.csv(selectFields(srczip, srcmetazip, selectedFields), file=csvFile, row.names = F)
   #Zip file .csv -> .zip  
   csvFileZiped<-newExt('.csv$', '.zip', csvFile)
@@ -62,14 +61,6 @@ buildSelectFieldsCSV<-function(srczip, srcmetazip, selectedFields, force=F){
     zip(zipfile = csvFileZiped, files = csvFile)
   }
   return (csvFile)
-}
-getDataFile<-function(sourceData){
-    if(file.exists(sourceData)){
-      f<-unz(sourceData, csvFile)
-    }else{
-      f<-csvFile
-    } 
-    return (f)
 }
 isURL<-function(s){
   grepl("www.|http:|https:", s)
