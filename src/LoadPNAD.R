@@ -10,7 +10,7 @@ target<-'meta.txt'
 #sourceData<-'data/PNADC_012017_20180816.zip'
 
 
-buildMeta<-function(src){
+readMeta<-function(src){
   tx  <- readLines(src)
   tx2  <- gsub(pattern = " $", replace = " ", x = tx, fixed=T)
   tx2  <- gsub(pattern = "  ", replace = " ", x = tx2)
@@ -19,8 +19,6 @@ buildMeta<-function(src){
   tx2  <- gsub(pattern = ". ", replace = " ", x = tx2, fixed=T)
   tx2
   writeLines(tx2, con=target)
-}
-readMeta<-function(){
   read.csv(file=target, sep = ' ', header = F)
 }
 selectFields<-function(srczip, selectedFields){
@@ -61,8 +59,6 @@ checkConfig<-function(){
 }
 if(checkConfig()){
   csvFile = gsub(pattern = '.zip$', replace = '.csv', x = sourceData)
-
-  buildMeta(sourceMeta)
-  config<-readMeta()
+  config<-readMeta(sourceMeta)
   selectedCols<-read.csv(file = getDataFile())
 }
