@@ -43,12 +43,18 @@ getDataFile<-function(){
     } 
     return (f)
 }
+isURL<-function(s){
+  grepl("www.|http:|https:", s)
+}
+isFilePath<-function(fpath){
+   return (file.exists(fpath) && isURL(fpath))
+}
 checkConfig<-function(){
-  if(!file.exists(sourceData)){
-    stop(paste("Arquivo de dados não encontrado: ", sourceData))
+  if(!isFilePath(sourceData)){
+     stop(paste("Arquivo de dados não encontrado: ", sourceData))
   }
   if(!file.exists(sourceMeta)){
-    if(!grepl("www.|http:|https:", sourceMeta)){
+    if(!isURL(sourceMeta)){
       stop(paste("Metadados não encontrado: ", sourceMeta))
     }
   }
