@@ -1,17 +1,14 @@
-#LEITURA DA PNAD 2018: 
+#LEITURA DA PNAD: 
 # Please cite: Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos V Seminário de Iniciação Científica e V Mostra de Trabalhos Científicos do IFNMG, Instituto Federal do Norte de Minas Gerais - IFNMG, Montes Claros/MG, , 2016. Bibtex: http://research.jcloud.net.br/bib/?q=Fatores
+
 #make sure to set correctly your working directory Ex: setwd("~/Projetcs/R/PNADRegression/")
 # mostrar até 8 casas decimais options("scipen" = 8) 
-#Arquivo de metadados (propriedades dos campos de dados)
-#sourceMeta<-'https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/data/meta.csv'
-#target<-paste(source, '.txt', sep='')
-sourceMeta<-'https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/data/meta.zip'
-selectedFields<-c("UF","V2007","V2009","V2010","VD3002","VD4020","V1023","V1022","V1028")
-source('https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/src/LoadPNAD.R?a=12333')
-##
+
+# Import this code: source('https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/src/LoadPNAD.R')
+
+
+#Nome do arquivo temporário de configuração
 target<-'metaclear.txt'
-#Arquivo de dados
-#sourceData<-'data/PNADC_012017_20180816.zip'
 
 
 readMeta<-function(src){
@@ -93,9 +90,4 @@ readCSVZip<-function(srcZip){
   srcZFile<-basename(srcZip)
   csvFile = newExt('.zip$', '.csv', srcZFile)
   read.csv(file = unz(srcZFile, csvFile))
-}
-if(checkConfig()){
-  csvFile = newExt('.zip$', '.csv', sourceData)
-  config<-readMeta(sourceMeta)
-  selectedCols<-read.csv(file = sourceData)
 }
