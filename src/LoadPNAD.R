@@ -1,4 +1,5 @@
 #LEITURA DA PNAD 2018: 
+# Please cite: Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos V Seminário de Iniciação Científica e V Mostra de Trabalhos Científicos do IFNMG, Instituto Federal do Norte de Minas Gerais - IFNMG, Montes Claros/MG, , 2016. Bibtex: http://research.jcloud.net.br/bib/?q=Fatores
 #make sure to set correctly your working directory Ex: setwd("~/Projetcs/R/PNADRegression/")
 # mostrar até 8 casas decimais options("scipen" = 8) 
 #Arquivo de metadados (propriedades dos campos de dados)
@@ -22,20 +23,20 @@ buildMeta<-function(src){
 readMeta<-function(){
   read.csv(file=target, sep = ' ', header = F)
 }
-getDataFile<-function(){
-    #Tenta ler o arquivo de dados descompactado
-    if(!file.exists(sourceData)){
-      pes2018 <- read.fwf(file=gsub(pattern = '.zip$', replace = '.txt', x = sourceData), widths=config$V3)
-      names(pes2018) <-config$V2
+selectFields<-function(srczip, selectedFields){
+      result <- read.fwf(file=unz(srczip, gsub(pattern = '.zip$', replace = '.txt', x = basename(srczip)), widths=config$V3))
+      names(result) <-config$V2
       #View(pes2018)
-      summary(pes2018) 
-      selectedCols <- subset(pes2018, select=selectedFields)
-      write.csv(pes2018b, file=csvFile, row.names = F)
+      summary(result) 
+      selectedCols <- subset(result, select=selectedFields)
+      #write.csv(pes2018b, file=csvFile, row.names = F)
       #Zip file .csv -> .zip  
-      if(!file.exists(sourceData)){
-        zip(zipfile = sourceData, files = csvFile)
-      }
-    }
+      #if(!file.exists(sourceData)){
+      #  zip(zipfile = sourceData, files = csvFile)
+      #}  
+      return (result)
+}
+getDataFile<-function(){
     if(file.exists(sourceData)){
       f<-unz(sourceData, csvFile)
     }else{
@@ -53,10 +54,8 @@ checkConfig<-function(){
   if(!isFilePath(sourceData)){
      stop(paste("Caminho inválido para arquivo de dados: ", sourceData))
   }
-  if(!file.exists(sourceMeta)){
-    if(!isURL(sourceMeta)){
-      stop(paste("Metadados não encontrado: ", sourceMeta))
-    }
+  if(!isFilePath(sourceMeta)){
+      stop(paste("Caminho inválido para arquivo de metadados: ", sourceMeta))
   }
   return (T)
 }
