@@ -47,11 +47,11 @@ isURL<-function(s){
   grepl("www.|http:|https:", s)
 }
 isFilePath<-function(fpath){
-   return (file.exists(fpath) && isURL(fpath))
+   return (file.exists(fpath) || isURL(fpath))
 }
 checkConfig<-function(){
   if(!isFilePath(sourceData)){
-     stop(paste("Arquivo de dados não encontrado: ", sourceData))
+     stop(paste("Caminho inválido para arquivo de dados: ", sourceData))
   }
   if(!file.exists(sourceMeta)){
     if(!isURL(sourceMeta)){
