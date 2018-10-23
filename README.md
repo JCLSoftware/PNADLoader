@@ -17,7 +17,7 @@ selectedFields<-c("UF","V2007","V2009","V2010","VD3002","VD4020","V1023","V1022"
 source('https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/src/LoadPNAD.R')
 ```
 
-Observe que o arquivo contendo os dados de entrada devem ser especificados nos parâmetros `sourceData` e `sourceMeta`. Se desejar ler os dados a partir de um conjunto de dados obtido do repositório do IBGE, é preciso informar também quais campos deseja selecionar. Para isso, atribua à variável `selectedFields` uma lista com os nomes dos campos conforme documentação de layout do IBGE.
+Observe que os arquivos contendo os dados de entrada devem ser especificados nos parâmetros `sourceData` e `sourceMeta`. Você pode utilizar os dados com alguns campos específicos como os que disponibilizamos aqui. Ou, se desejar ler os dados com todos os campos originais a partir de um conjunto de dados obtido do repositório do IBGE, é preciso informar também quais campos deseja selecionar. Para isso, atribua à variável `selectedFields` uma lista com os nomes dos campos conforme documentação de layout do IBGE.
 
 # License
 
