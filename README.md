@@ -1,13 +1,13 @@
 # PNAD Loader
 
-O PNAD Loader possui funções que facilitam trabalhar com os dados da PNAD do IBGE. Basta carregar o arquivo `LoadPNAD.R` em seu código para que tenha acesso à API que permite extraír os dados`selectedCols`. Veja os exemplos que seguem.
+O PNAD Loader possui funções que facilitam trabalhar com os dados da PNAD do IBGE. Basta carregar o arquivo `LoadPNAD.R` em seu código para que tenha acesso à API que permite extraír os dados. Veja os exemplos que seguem.
 
 ```R
 # Make sure to set correctly your working directory Ex: `setwd("~/data/")`.
 setwd("~/Projetcs/R/PNADRegression/")
 ```
 
-# LEITURA DA PNAD:
+## LEITURA DA PNAD:
 
 ```R
  
@@ -17,7 +17,7 @@ setwd("~/Projetcs/R/PNADRegression/")
 source('https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/src/LoadPNAD.R')
 
 ```
-## Exemplo 1: criar arquivo csv compactado com variáveis de interesse
+### Exemplo 1: criar arquivo csv compactado com variáveis de interesse
 ```R
 sourceData<-'http://servicodados.ibge.gov.br/Download/Download.ashx?u=ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/2017/PNADC_012017_20180816.zip'
 ## Arquivo de metadados (propriedades dos campos de dados)
@@ -38,7 +38,7 @@ Observe que os arquivos contendo os dados de entrada devem ser especificados nos
 #V2009: Idade
 #VD3002: Anos de estudo
 ```
-## Exemplo 2: lê o arquivo CSV com as variáveis de interesse
+### Exemplo 2: lê o arquivo CSV com as variáveis de interesse
 Uma vez gerado o arquivo com as variáveis de interesse (veja Exemplo 01), é possível fazer a leitura desse arquivo compactado. Você pode utilizar os dados com alguns campos específicos como os que disponibilizamos na url armazenada em `sourceDataSelected'.
 ```R
 sourceDataSelected<-'https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/data/PNADC_012017_20180816i.zip'
