@@ -4,7 +4,7 @@ O PNAD Loader possui funções que facilitam trabalhar com os dados da PNAD do I
 
 ```R
 # Make sure to set correctly your working directory Ex: `setwd("~/data/")`.
-setwd("~/Projetcs/R/PNADRegression/")
+setwd("~/data/")
 ```
 
 ## LEITURA DA PNAD:
