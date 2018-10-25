@@ -52,6 +52,19 @@ selectFields<-function(srczip, srcmetazip, selectedFields){
 newExt<-function(from, to, name){
   gsub(pattern = from, replace = to, x = name)
 }
+################################################################################
+# buildSelectFieldsCSV
+#   Build a CSV file just with variables of interest. Compress the csv file (zip
+#   format) Format: comma separeted column.
+# Parameters:
+#    srczip: dataset file address (url or local path). Format: fixed size column.
+#    srcmetazip: metadata file address. Format: fixed size column.
+#    selectedFields: variables of interest
+#    force: (default: false) force cache refresh then download the file when it 
+#       is miss. 
+#  Return:
+#     CSV file name.
+################################################################################
 buildSelectFieldsCSV<-function(srczip, srcmetazip, selectedFields, force=F){
   csvFile<-newExt('.zip$', '.csv', basename(srczip))
   write.csv(selectFields(srczip, srcmetazip, selectedFields), file=csvFile, row.names = F)
