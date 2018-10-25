@@ -17,6 +17,8 @@ setwd("~/data/")
 source('https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/src/LoadPNAD.R')
 
 ```
+Once the PNADLoader has been imported, you can use codes like those shown below.
+
 ### Exemplo 1: criar arquivo csv compactado com variáveis de interesse
 ```R
 sourceData<-'http://servicodados.ibge.gov.br/Download/Download.ashx?u=ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/2017/PNADC_012017_20180816.zip'
