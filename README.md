@@ -38,6 +38,7 @@ Observe que os arquivos contendo os dados de entrada devem ser especificados nos
 #V1028: É o peso da pessoa. No caso da PNAD Contínua tem uma variável única de peso da pessoa e peso do domicílio
 #V2007: Sexo
 #V2009: Idade
+#V2010: Cor
 #VD3002: Anos de estudo
 ```
 ### Exemplo 2: lê o arquivo CSV com as variáveis de interesse
