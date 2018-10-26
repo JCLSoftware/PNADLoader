@@ -39,7 +39,7 @@ if (selectedColsd$cor[cont]==6){
   amarelo[cont]<-1 }
 if (selectedColsd$cor[cont]==8){ 
   parda[cont]<- 1 } 
-if (selectedColsd$cor[cont]==0){ indigena[cont]<- 1 } } 
+if (selectedColsd$cor[cont]==0){ indigena[cont]<- 1 } 
 
 lrenda<-log(renda)
 summary(lrenda)
