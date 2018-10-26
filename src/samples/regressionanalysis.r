@@ -1,14 +1,14 @@
-´´´R 
+
 # Make sure to set correctly your working directory Ex: `setwd("~/data/")`.
 setwd("~/data/")
-´´´
+
 source('https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/src/LoadPNAD.R')
 sourceDataSelected<-'https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/data/PNADC_012017_20180816i.zip'
 selectedCols<-readCSVZip(sourceDataSelected)
-´´´R
+
 #renaming the columns
 names(selectedCols)<-c("uf","sexo","idade","cor","anoestudo","renda","areacensitaria","situacaocensitaria","pesopes")
-´´´
+
 selectedColsb <- subset(selectedCols, select=c("uf","sexo","idade","cor","anoestudo","renda","areacensitaria","situacaocensitaria","pesopes"))
 selectedColsc<-subset(selectedColsb, uf>=31 & uf<=35 )
 
