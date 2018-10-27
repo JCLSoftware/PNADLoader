@@ -10,12 +10,14 @@ selectedCols<-readCSVZip(sourceDataSelected)
 names(selectedCols)<-c("uf","sexo","idade","cor","anoestudo","renda","areacensitaria","situacaocensitaria","pesopes")
 
 #Já foi feito no PNADLoader, não é necessário aqui: selectedColsb <- subset(selectedCols, select=c("uf","sexo","idade","cor","anoestudo","renda","areacensitaria","situacaocensitaria","pesopes"))
+#listing states.
 selectedCols<-subset(selectedCols, uf>=31 & uf<=35 )
-
 summary(selectedCols)
+#remove empty fiels from variables.
 selectedCols <- subset(selectedCols, renda!=999999999999 & renda!=0 & cor!=9 &anoestudo!= 17 )
 attach(selectedCols)
 sexo<-str(sexo)
+#creating new indicators manually.
 l<-nrow(selectedCols)
 sexomasc<-numeric(l)
 ehrural<-numeric(l) 
