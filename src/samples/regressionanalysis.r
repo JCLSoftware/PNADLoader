@@ -27,11 +27,11 @@ amarelo<- numeric(l)
 parda<- numeric(l) 
 indigena<- numeric(l)
 for (cont in 1:l) { 
-  if (selectedCols$sexo[cont] ==2){ 
+  if (selectedCols$sexo[cont] ==1){ 
     sexomasc[cont] <-1 }
   else { sexomasc[cont]<-0 } } 
 for (cont in 1:l) { 
-  if (selectedCols$situacaocensitaria[cont]>=1 & selectedCols$situacaocensitaria[cont]<=3 ){ 
+  if (selectedCols$situacaocensitaria[cont]==1){ 
     ehrural[cont] <-0 }else { ehrural[cont]<-1 } } 
 for (cont in 1:l) { 
   if (selectedCols$areacensitaria[cont]==1){ 
