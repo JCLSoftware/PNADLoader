@@ -26,6 +26,7 @@ preta<- numeric(l)
 amarelo<- numeric(l)
 parda<- numeric(l) 
 indigena<- numeric(l)
+branca<- numeric(l)
 for (cont in 1:l) { 
   if (selectedCols$sexo[cont] ==1){ 
     sexomasc[cont] <-1 }
@@ -48,8 +49,10 @@ if (selectedCols$cor[cont]==3){
 #Create the brown indicator variable for all observations.
 if (selectedCols$cor[cont]==4){ 
   parda[cont]<- 1 } 
+if (selectedCols$cor[cont]==5){ 
+  indigena[cont]<- 1 }
 #Creating for all observations the indicative variable of indigenous color.
-if (selectedCols$cor[cont]==0){ indigena[cont]<- 1 } }
+if (selectedCols$cor[cont]==0){ branca[cont]<- 1 } }
 
 #Regressão
 #Verifica se o pacote "car" está instalado e se não tiver efetua a instalação
