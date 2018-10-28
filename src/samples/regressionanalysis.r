@@ -39,16 +39,16 @@ for (cont in 1:l) {
   else { naometropole[cont]<-1 } }
 
 for (cont in 1:l) { 
-if (selectedCols$cor[cont]==4){
+if (selectedCols$cor[cont]==2){
 preta[cont] <-1 
 } 
 #Creating the yellow indicator variable for all observations.
-if (selectedCols$cor[cont]==6){ 
+if (selectedCols$cor[cont]==3){ 
   amarelo[cont]<-1 }
 #Create the brown indicator variable for all observations.
-if (selectedCols$cor[cont]==8){ 
+if (selectedCols$cor[cont]==4){ 
   parda[cont]<- 1 } 
-#Creating for all observations the indicative variable of Indian color.
+#Creating for all observations the indicative variable of indigenous color.
 if (selectedCols$cor[cont]==0){ indigena[cont]<- 1 } }
 
 #Regressão
