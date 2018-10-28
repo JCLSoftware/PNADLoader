@@ -59,6 +59,6 @@ Attribution — You must give appropriate credit, provide a link to the license,
 Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos
 V Seminário de Iniciação Científica e V Mostra de Trabalhos Científicos do IFNMG, Instituto Federal do Norte de Minas Gerais - IFNMG, Montes Claros/MG, , 2016. Bibtex: http://research.jcloud.net.br/bib/?q=Fatores
 
-# External Links
-
+# External References
+Tabela de Código de UF do IBGE: http://www.lgncontabil.com.br/icms/Tabela-Codigo-de-UF-do-IBGE.pdf
 PNAD datasets: ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/
