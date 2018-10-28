@@ -38,18 +38,18 @@ for (cont in 1:l) {
     naometropole[cont] <-0 }
   else { naometropole[cont]<-1 } }
 
-for (cont in 1:62260) { 
-if (selectedColsd$cor[cont]==4){
+for (cont in 1:l) { 
+if (selectedCols$cor[cont]==4){
 preta[cont] <-1 
 } 
 #Creating the yellow indicator variable for all observations.
-if (selectedColsd$cor[cont]==6){ 
+if (selectedCols$cor[cont]==6){ 
   amarelo[cont]<-1 }
 #Create the brown indicator variable for all observations.
-if (selectedColsd$cor[cont]==8){ 
+if (selectedCols$cor[cont]==8){ 
   parda[cont]<- 1 } 
 #Creating for all observations the indicative variable of Indian color.
-if (selectedColsd$cor[cont]==0){ indigena[cont]<- 1 } }
+if (selectedCols$cor[cont]==0){ indigena[cont]<- 1 } }
 
 #Regressão
 #Verifica se o pacote "car" está instalado e se não tiver efetua a instalação
