@@ -57,10 +57,10 @@ list.of.packages <- c("car")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 library("car")
-
+uf <- factor(uf)
 lrenda<-log(renda)
 summary(lrenda)
-modelo1<- lm(lrenda~uf+sexomasc+idade+preta+amarelo+parda+indigena+anoestudo+ehrural+naometropole,weights=pesopes)
+modelo1<- lm(lrenda~uf+sexomasc+idade+I(idade^2)+preta+amarelo+parda+indigena+anoestudo+ehrural+naometropole,weights=pesopes)
 #Qual a melhor forma de apresentar o sumário no texto? Uma tabela?
 summary(modelo1)
 
