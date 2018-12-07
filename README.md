@@ -58,10 +58,9 @@ Attribution — You must give appropriate credit, provide a link to the license,
 
 ## Please cite:
 
-Please cite:  Um Arcabouço para Integração de Microdados da Pesquisa Nacional por Amostra de Domicílios: Aplicação na Análise dos Fatores de Influência sobre a Renda do Trabalho na Região Sul do Brasil,
+[Please cite:  Um Arcabouço para Integração de Microdados da Pesquisa Nacional por Amostra de Domicílios: Aplicação na Análise dos Fatores de Influência sobre a Renda do Trabalho na Região Sul do Brasil,
 Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos, et al.
-Anais dos Simpόsios de Informática do IFNMG-Campus Januária, 10, 6, 11, 2018. Avaliable on http://research.jcloud.net.br/bib/?q=Fatores
-[a link](https://github.com/user/repo/blob/branch/other_file.md)
+Anais dos Simpόsios de Informática do IFNMG-Campus Januária, 10, 6, 11, 2018.](http://research.jcloud.net.br/bib/?q=Fatores)
 
 # External References
 Tabela de Código de UF do IBGE: http://www.lgncontabil.com.br/icms/Tabela-Codigo-de-UF-do-IBGE.pdf
