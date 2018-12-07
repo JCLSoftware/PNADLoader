@@ -1,6 +1,6 @@
 # PNAD Loader
 
-O PNAD Loader possui funções que facilitam trabalhar com os dados da PNAD do IBGE. Basta carregar o arquivo `LoadPNAD.R` em seu código para que tenha acesso à API que permite extraír os dados. Veja os exemplos que seguem.
+The PNADLoader has features that facilitate working with data from the IBGE National Household Survey (PNAD). Simply load the `LoadPNAD.R` file into your code so you have access to the API that allows you to extract the data. See the examples that follow.
 
 ```R
 # Make sure to set correctly your working directory Ex: `setwd("~/data/")`.
@@ -11,7 +11,9 @@ setwd("~/data/")
 
 ```R
  
-## Please cite: Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos V Seminário de Iniciação Científica e V Mostra de Trabalhos Científicos do IFNMG, Instituto Federal do Norte de Minas Gerais - IFNMG, Montes Claros/MG, , 2016. Bibtex: http://research.jcloud.net.br/bib/?q=Fatores
+## Please cite:  Um Arcabouço para Integração de Microdados da Pesquisa Nacional por Amostra de Domicílios: Aplicação na Análise dos Fatores de Influência sobre a Renda do Trabalho na Região Sul do Brasil,
+Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos, et al.
+Anais dos Simpόsios de Informática do IFNMG-Campus Januária, 10, 6, 11, 2018. Avaliable on http://research.jcloud.net.br/bib/?q=Fatores
 
 #Importa o código do PNADLoader
 source('https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/src/LoadPNAD.R')
@@ -19,30 +21,30 @@ source('https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/src/Load
 ```
 Once the PNADLoader has been imported, you can use codes like those shown below.
 
-### Exemplo 1: criar arquivo csv compactado com variáveis de interesse
+### Sample 1: create compressed csv file with variables of interest
 ```R
 sourceData<-'http://servicodados.ibge.gov.br/Download/Download.ashx?u=ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/2017/PNADC_012017_20180816.zip'
-## Arquivo de metadados (propriedades dos campos de dados)
+## Metadata file (properties of data fields)
 sourceMeta<-'https://raw.githubusercontent.com/JCLSoftware/PNADRegression/master/data/meta.zip'
-## Campos selecionados
+## Selected fields
 selectedFields<-c("UF","V2007","V2009","V2010","VD3002","VD4020","V1023","V1022","V1028")
 buildSelectFieldsCSV(sourceData, sourceMeta, selectedFields)
 
 ```
-Observe que os arquivos contendo os dados de entrada devem ser especificados nos parâmetros `sourceData` e `sourceMeta`. Para ler os dados com todos os campos originais a partir de um conjunto de dados obtido do repositório do IBGE. Em seguida, informe quais campos deseja selecionar (variáveis de interesse). Para isso, atribua à variável `selectedFields` uma lista com os nomes dos campos conforme documentação de layout do IBGE. Note que os campos utilizados nesse exemplo foram:
+Note that the files containing the input data must be specified in the `sourceData` and` sourceMeta` parameters. To read the data with all the original fields from a set of data obtained from the IBGE repository. Then enter which fields you want to select (interest variables). To do this, assign the `selectedFields` variable a list of field names according to the IBGE layout documentation. Note that the fields used in this example were:
 
 ```R
-#VD4020: Renda - rendimento mensal efetivo de todos os trabalhos para os maiores de 14 anos
-#V1023: Área censitária é se o domicílio fica na capital, região metropolitana ou em outros lugares do estado
-#V1022: Situação censitária é se o domicílio fica na zona urbana ou rural
-#V1028: É o peso da pessoa. No caso da PNAD Contínua tem uma variável única de peso da pessoa e peso do domicílio
-#V2007: Sexo
-#V2009: Idade
-#V2010: Cor
-#VD3002: Anos de estudo
+#VD4020: Income - effective monthly income of all jobs for those over 14 years of age
+#V1023: Census area is if the domicile is in the capital, metropolitan region or elsewhere in the state
+#V1022: Census situation is whether the household is in the urban or rural area
+#V1028: The person's weight. In the case of the Continuous PNAD has a unique variable of weight of the person and weight of the domicile
+#V2007: Gender
+#V2009: Age
+#V2010: Skin color or race
+#VD3002: Years of study
 ```
-### Exemplo 2: lê o arquivo CSV com as variáveis de interesse
-Uma vez gerado o arquivo com as variáveis de interesse (veja Exemplo 01), é possível fazer a leitura desse arquivo compactado. Você pode utilizar os dados com alguns campos específicos como os que disponibilizamos na url armazenada em `sourceDataSelected'.
+### Exemplo 2: reads the CSV file with the variables of interest
+Once generated the file with the variables of interest (see Example 01), it is possible to read this archive. You can use the data to some specific fields such as those available in the url stored in `sourceDataSelected '.
 ```R
 sourceDataSelected<-'https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/data/PNADC_012017_20180816i.zip'
 selectedCols<-readCSVZip(sourceDataSelected)
@@ -56,8 +58,10 @@ Attribution — You must give appropriate credit, provide a link to the license,
 
 ## Please cite:
 
-Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos
-V Seminário de Iniciação Científica e V Mostra de Trabalhos Científicos do IFNMG, Instituto Federal do Norte de Minas Gerais - IFNMG, Montes Claros/MG, , 2016. Bibtex: http://research.jcloud.net.br/bib/?q=Fatores
+Please cite:  Um Arcabouço para Integração de Microdados da Pesquisa Nacional por Amostra de Domicílios: Aplicação na Análise dos Fatores de Influência sobre a Renda do Trabalho na Região Sul do Brasil,
+Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramalho dos Santos, et al.
+Anais dos Simpόsios de Informática do IFNMG-Campus Januária, 10, 6, 11, 2018. Avaliable on http://research.jcloud.net.br/bib/?q=Fatores
+[a link](https://github.com/user/repo/blob/branch/other_file.md)
 
 # External References
 Tabela de Código de UF do IBGE: http://www.lgncontabil.com.br/icms/Tabela-Codigo-de-UF-do-IBGE.pdf
