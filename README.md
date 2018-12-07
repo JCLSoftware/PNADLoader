@@ -7,7 +7,7 @@ The PNADLoader has features that facilitate working with data from the IBGE Nati
 setwd("~/data/")
 ```
 
-## LEITURA DA PNAD:
+## LOADING PNAD::
 
 ```R
  
