@@ -43,7 +43,7 @@ Note that the files containing the input data must be specified in the `sourceDa
 #V2010: Skin color or race
 #VD3002: Years of study
 ```
-### Exemplo 2: reads the CSV file with the variables of interest
+### Sample 2: reads the CSV file with the variables of interest
 Once generated the file with the variables of interest (see Example 01), it is possible to read this archive. You can use the data to some specific fields such as those available in the url stored in `sourceDataSelected '.
 ```R
 sourceDataSelected<-'https://raw.githubusercontent.com/JCLSoftware/PNADLoader/master/data/PNADC_012017_20180816i.zip'
