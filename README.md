@@ -63,5 +63,6 @@ Lara Soares Menezes, Jeancarlo Campos Leão, Eduarda Soares Menezes, Aline Ramal
 Anais dos Simpόsios de Informática do IFNMG-Campus Januária, 10, 6, 11, 2018.](http://research.jcloud.net.br/bib/?q=Fatores)
 
 # External References
-Tabela de Código de UF do IBGE: http://www.lgncontabil.com.br/icms/Tabela-Codigo-de-UF-do-IBGE.pdf
+Tabela de Código de UF do IBGE: https://www.ibge.gov.br/estatisticas-novoportal/downloads-estatisticas.html
+
 PNAD datasets: ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/
