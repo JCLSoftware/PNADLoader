@@ -92,6 +92,7 @@ checkConfig<-function(){
 }
 readCSVZip<-function(srcZip){
   srcZFile<-basename(srcZip)
-  csvFile = newExt('.zip$', '.csv', srcZFile)
+  #csvFile = newExt('.zip$', '.csv', srcZFile)
+  csvFile = getFromZiped(sourceDataSelected, '.csv')
   read.csv(file = unz(srcZFile, csvFile))
 }
