@@ -66,3 +66,6 @@ Anais dos Simpόsios de Informática do IFNMG-Campus Januária, 10, 6, 11, 2018.
 Tabela de Código de UF do IBGE: https://www.ibge.gov.br/estatisticas-novoportal/downloads-estatisticas.html
 
 PNAD datasets: ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/
+
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)]https://www.paypal.com/cgi-bin/webscrcmd=_s-xclick&hosted_button_id=LMHFDNLH65UKG
